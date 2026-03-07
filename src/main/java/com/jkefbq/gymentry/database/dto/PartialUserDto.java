@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.database.dto;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.jkefbq.gymentry.dto.CanCache;
 import com.jkefbq.gymentry.security.UserRole;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+@CanCache
 public class PartialUserDto implements Serializable {
     private UUID id;
     private String firstName;

@@ -106,7 +106,7 @@ public class EntryControllerTest {
     @Test
     @WithMockUser
     public void getActiveSubscriptionTest() throws Exception {
-        when(userService.findByEmail(any())).thenReturn(Optional.ofNullable(getPartialUser()));
+        when(userService.getUserIdByEmail(any())).thenReturn(Optional.of(UUID.randomUUID()));
         mockMvc.perform(get("/user/subscriptions/active"))
                 .andExpect(status().isOk());
         verify(subscriptionService).getActiveSubscription(any());

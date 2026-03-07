@@ -5,11 +5,14 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.jkefbq.gymentry.dto.CanCache;
 import lombok.NonNull;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
 import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -28,10 +31,23 @@ public class CacheConfig {
 
     @Bean
     public ObjectMapper redisObjectMapper() {
-        return new ObjectMapper()
+        var objectMapper = new ObjectMapper()
                 .registerModule(new JavaTimeModule())
                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
                 .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+        new ClassPathScanningCandidateComponentProvider(false) {{
+            addIncludeFilter(new AnnotationTypeFilter(CanCache.class));
+        }}
+                .findCandidateComponents("com.jkefbq.gymentry")
+                .forEach(bean -> {
+                    try {
+                        Class<?> clazz = Class.forName(bean.getBeanClassName());
+                        objectMapper.addMixIn(clazz, TypeInfoMixin.class);
+                    } catch (ClassNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+        return objectMapper;
     }
 
     @Bean

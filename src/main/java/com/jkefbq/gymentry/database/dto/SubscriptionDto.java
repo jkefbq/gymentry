@@ -1,7 +1,7 @@
 package com.jkefbq.gymentry.database.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.jkefbq.gymentry.dto.CanCache;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -18,7 +18,7 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+@CanCache
 public class SubscriptionDto implements Serializable {
     private UUID id;
     private Integer visitsTotal;

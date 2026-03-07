@@ -1,4 +1,4 @@
-package com.jkefbq.gymentry.database.service;
+package com.jkefbq.gymentry.facade;
 
 import com.jkefbq.gymentry.database.dto.UserDto;
 

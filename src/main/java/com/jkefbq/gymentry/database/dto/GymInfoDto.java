@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.database.dto;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.jkefbq.gymentry.dto.CanCache;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = JsonTypeInfo.As.PROPERTY, property = "@class")
+@CanCache
 public class GymInfoDto implements Serializable {
     private String address;
 }
