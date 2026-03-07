@@ -70,7 +70,6 @@ public class SubscriptionService implements SubscriptionManager {
                     throw new IllegalStateException("user can't have more then 1 active subscription");
                 })
                 .orElseThrow(() -> new NonActiveSubscriptionException("the user does not have any active subscriptions"));
-
     }
 
     @Transactional

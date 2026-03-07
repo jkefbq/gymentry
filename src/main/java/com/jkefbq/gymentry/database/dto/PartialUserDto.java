@@ -18,7 +18,6 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@CanCache
 public class PartialUserDto implements Serializable {
     private UUID id;
     private String firstName;

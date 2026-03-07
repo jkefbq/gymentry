@@ -17,7 +17,6 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@CanCache
 public class TariffDto implements Serializable {
     private UUID id;
     private String tariffName;

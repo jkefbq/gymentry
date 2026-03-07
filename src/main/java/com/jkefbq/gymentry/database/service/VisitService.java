@@ -23,7 +23,7 @@ public class VisitService implements VisitManager {
 
     @Transactional
     @Override
-    @CacheEvict(cacheNames = CACHE_NAMES)
+    @CacheEvict(cacheNames = CACHE_NAMES, allEntries = true)
     public VisitDto create(VisitDto dto) {
         Visit notSavedEntity = visitMapper.toEntity(dto);
         Visit savedEntity = visitRepository.save(notSavedEntity);

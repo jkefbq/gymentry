@@ -18,7 +18,6 @@ import java.util.UUID;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@CanCache
 public class SubscriptionDto implements Serializable {
     private UUID id;
     private Integer visitsTotal;

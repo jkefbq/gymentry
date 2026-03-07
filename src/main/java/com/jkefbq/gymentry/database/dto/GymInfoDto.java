@@ -1,6 +1,5 @@
 package com.jkefbq.gymentry.database.dto;
 
-import com.jkefbq.gymentry.dto.CanCache;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +11,6 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@CanCache
 public class GymInfoDto implements Serializable {
     private String address;
 }
