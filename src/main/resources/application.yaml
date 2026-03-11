@@ -2,7 +2,7 @@ server:
   port: ${CONTAINER_PORT:8080}
 spring:
   datasource:
-    url: jdbc:postgresql://${DATABASE_HOST:localhost}:5433/${DATABASE_NAME:postgres}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:postgres}
     username: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
@@ -12,8 +12,8 @@ spring:
     show-sql: true
   data:
     redis:
-      host: ${REDIS_HOST:localhost}
-      port: ${REDIS_PORT:6379}
+      host: ${CACHE_HOST:localhost}
+      port: ${CACHE_PORT:6379}
       timeout: 1s
   cache:
     type: redis
@@ -22,7 +22,7 @@ spring:
     change-log: classpath:/db/changelog/db.changelog-master.yaml
     user: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:postgres}
-    url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5433}/${DATABASE_NAME:postgres}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:postgres}
   mail:
     host: ${SPRING_MAIL_HOST:smtp.gmail.com}
     port: ${SPRING_MAIL_PORT:587}
@@ -38,6 +38,12 @@ spring:
             required: true
         ssl:
           trust: "smtp.gmail.com"
+management:
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
 resilience4j.ratelimiter:
   instances:
     register:

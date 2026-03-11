@@ -12,6 +12,7 @@ import com.jkefbq.gymentry.exception.InvalidSubscriptionException;
 import com.jkefbq.gymentry.exception.NonActiveSubscriptionException;
 import com.jkefbq.gymentry.facade.AdminStatisticsFacade;
 import com.jkefbq.gymentry.facade.GymEntryFacade;
+import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.validation.Valid;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +34,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Hidden
 @Slf4j
 @RestController
 @RequestMapping("/admin")
@@ -48,59 +50,65 @@ public class AdminController {
     @PostMapping("/confirm-entry")
     public ResponseEntity<@NonNull String> confirmEntry(
             @AuthenticationPrincipal UserDetails userDetails, @RequestBody @Valid EntryCode code, @RequestParam String gymAddress) throws NonActiveSubscriptionException, InvalidSubscriptionException {
-        log.info("call /admin/confirm-entry");
+        log.info("POST /admin/confirm-entry");
         gymEntryFacade.confirmEntry(code.getCode(), userDetails.getUsername(), gymAddress);
         return ResponseEntity.ok("Успех! посетитель может идти на тренировку");
     }
 
     @PostMapping("/create/tariff")
     public List<TariffDto> createTariff(@RequestBody TariffDto tariffDto) {
-        log.info("call /admin/create-tariff");
+        log.info("POST /admin/create-tariff");
         tariffService.create(tariffDto);
         return tariffService.getAll();
     }
 
     @PutMapping("edit/tariffs")
     public List<TariffDto> editTariffs(@RequestBody List<TariffDto> tariffList) {
-        log.info("call /admin/edit/tariffs");
+        log.info("PUT /admin/edit/tariffs");
         return tariffService.saveAll(tariffList);
     }
 
     @GetMapping("/tariffs/types")
     public TariffType[] getAllTariffTypes() {
-        log.info("call /admin/tariff-types");
+        log.info("GET /admin/tariff-types");
         return TariffType.values();
     }
 
     @DeleteMapping("/delete/tariffs")
     public ResponseEntity<@NonNull String> deleteTariffs(@RequestBody List<TariffDto> tariffList) {
-        log.info("call /admin/delete-tariffs with args {}", tariffList);
+        log.info("DELETE /admin/delete-tariffs with args {}", tariffList);
         tariffService.deleteAll(tariffList);
         return ResponseEntity.ok("success");
     }
 
-    @PutMapping("/edit/gym-info")
-    public GymInfoDto editGymInfoDto(@RequestBody GymInfoDto gymInfoDto) {
-        log.info("call /admin/edit/gym-info");
-        return gymInfoService.save(gymInfoDto);
-    }
-
     @GetMapping("/gym/addresses")
     public List<String> getAllAddresses() {
-        log.info("call /admin/gym/addresses");
+        log.info("GET /admin/gym/addresses");
         return gymInfoService.getAllAddresses();
     }
 
     @GetMapping("/statistics/visits")
     public VisitStatistics getVisitStatisticsForPeriod(@RequestParam LocalDateTime from, @RequestParam LocalDateTime to, @RequestParam String gymAddress) {
-        log.info("call /admin/statistics/visits/summary?from={}&to={}&gymAddress={}", from, to, gymAddress);
+        log.info("GET /admin/statistics/visits/summary?from={}&to={}&gymAddress={}", from, to, gymAddress);
         return adminStatisticsFacade.getVisitStatisticsForPeriod(from, to, gymAddress);
     }
 
     @GetMapping("/statistics/purchases")
     public PurchaseStatistics getPurchaseStatisticsForPeriod(@RequestParam LocalDate from, @RequestParam LocalDate to) {
-        log.info("call /admin/statistics/purchases/summary?from={}&to={}", from, to);
+        log.info("GET /admin/statistics/purchases/summary?from={}&to={}", from, to);
         return adminStatisticsFacade.getPurchaseStatisticsForPeriod(from, to);
+    }
+
+    @PutMapping("/edit/gym-info")
+    public GymInfoDto editGymInfoDto(@RequestBody GymInfoDto gymInfoDto) {
+        log.info("PUT /admin/edit/gym-info");
+        return gymInfoService.save(gymInfoDto);
+    }
+
+    @PostMapping("/gym/addresses")
+    public String createGymAddress(@RequestBody String address) {
+        log.info("POST /admin/gym/addresses");
+        return gymInfoService.save(new GymInfoDto(address)).getAddress();
     }
 
 }

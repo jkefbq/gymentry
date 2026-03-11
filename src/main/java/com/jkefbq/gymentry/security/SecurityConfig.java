@@ -35,8 +35,9 @@ public class SecurityConfig {
     @Order(1)
     public SecurityFilterChain publicFilterChain(HttpSecurity httpSecurity) {
         httpSecurity
-                .securityMatcher("/register", "/activate/**", "/login", "/refresh",
-                        "/swagger-ui/**", "/resend-activation-code", "/v3/api-docs/**", "/css/**", "/js/**")
+                .securityMatcher("/register", "/activate/**", "/login", "/refresh", "/swagger-ui/**",
+                        "/resend-activation-code", "/v3/api-docs/**", "/css/**", "/js/**", "/html/**",
+                        "/actuator/health/liveness", "/actuator/health/readiness", "/favicon.ico")
                 .authorizeHttpRequests(auth -> auth.anyRequest().permitAll())
                 .sessionManagement(session ->
                         session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)

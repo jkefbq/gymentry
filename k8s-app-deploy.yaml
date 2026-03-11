@@ -1,0 +1,129 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gymentry-app
+  namespace: gymentry
+  labels:
+    app: gymentry-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gymentry-app
+  template:
+    metadata:
+      labels:
+        app: gymentry-app
+    spec:
+      containers:
+        - name: gymentry-app
+          image: gymentry:latest
+          imagePullPolicy: Never
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "256Mi"
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          startupProbe:
+            httpGet:
+              port: 8080
+              path: /actuator/health/liveness
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 4
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /actuator/health/liveness
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 30
+            failureThreshold: 1
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /actuator/health/readiness
+            initialDelaySeconds: 5
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 3
+          env:
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: database-config
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: database-config
+                  key: DB_PORT
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: database-config
+                  key: DB_NAME
+            - name: CACHE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: cache-config
+                  key: CACHE_HOST
+            - name: CACHE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: cache-config
+                  key: CACHE_PORT
+            - name: ENCRYPTION_AUTH_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: ENCRYPTION_AUTH_KEY
+            - name: SPRING_MAIL_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: SPRING_MAIL_HOST
+            - name: SPRING_MAIL_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: SPRING_MAIL_PORT
+            - name: SPRING_MAIL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: SPRING_MAIL_USERNAME
+            - name: SPRING_MAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: app-secret
+                  key: SPRING_MAIL_PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gymentry-app-service
+  namespace: gymentry
+  labels:
+    app: gymentry-app
+spec:
+  type: ClusterIP
+  selector:
+    app: gymentry-app
+  ports:
+    - port: 8080
+      protocol: TCP
