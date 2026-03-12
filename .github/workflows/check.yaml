@@ -3,6 +3,8 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: self-hosted
+    container:
+      image: alpine:3.14
     steps:
       - name: checkout
         uses: actions/checkout@v6
@@ -17,6 +19,11 @@ jobs:
   test:
     needs: build
     runs-on: self-hosted
+    container:
+      image: maven:3.9-eclipse-temurin-21
+      env:
+        DOCKER_HOST: tcp://host-gateway:2375
+        options: --add-host=host-gateway:host-gateway
     steps:
       - name: checkout
         uses: actions/checkout@v6
