@@ -3,9 +3,6 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: self-hosted
-    permissions:
-      contents: read
-      packages: write
     steps:
       - name: checkout
         uses: actions/checkout@v6
