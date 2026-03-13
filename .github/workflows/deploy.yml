@@ -30,5 +30,5 @@ jobs:
         run: |
           $decoded = [System.Convert]::FromBase64String($env:KUBECONFIG_DATA)
           [System.IO.File]::WriteAllBytes("$env:USERPROFILE\.kube\config", $decoded)
-          kubectl set image deployment/gymentry-app gymentry-app=ghcr.io/${{ github.repository }}:${{ github.sha }}
-          kubectl rollout status deployment/gymentry-app --timeout=60s
+          kubectl set image deployment/gymentry-app gymentry-app=ghcr.io/${{ github.repository }}:${{ github.sha }} -n gymentry
+          kubectl rollout status deployment/gymentry-app --timeout=60s -n gyentry
