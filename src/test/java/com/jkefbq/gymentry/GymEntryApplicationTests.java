@@ -10,6 +10,8 @@ import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
 import com.jkefbq.gymentry.facade.MarketFacade;
 import com.jkefbq.gymentry.security.JwtService;
 import com.jkefbq.gymentry.security.UserCredentialsDto;
+import com.jkefbq.gymentry.service.KafkaConsumer;
+import com.jkefbq.gymentry.service.KafkaProducer;
 import com.jkefbq.gymentry.service.MailService;
 import com.jkefbq.gymentry.service.SubscriptionPriceCalculator;
 import com.jkefbq.gymentry.service.VerificationCodeService;
@@ -84,6 +86,10 @@ class GymEntryApplicationTests {
 
     @MockitoBean
     MailService mailService;
+    @MockitoBean
+    KafkaProducer kafkaProducer;
+    @MockitoBean
+    KafkaConsumer kafkaConsumer;
     @MockitoBean
     VerificationCodeService verificationCodeService;
     @MockitoSpyBean
