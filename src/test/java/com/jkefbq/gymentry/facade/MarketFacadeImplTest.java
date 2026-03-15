@@ -1,7 +1,6 @@
 package com.jkefbq.gymentry.facade;
 
 import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
 import com.jkefbq.gymentry.database.dto.TariffType;
 import com.jkefbq.gymentry.database.mapper.SubscriptionMapper;
 import com.jkefbq.gymentry.database.mapper.SubscriptionMapperImpl;
@@ -20,8 +19,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Optional;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -62,17 +59,5 @@ public class MarketFacadeImplTest {
         marketFacade.calculatePrice(TariffType.BASIC, visitCount);
 
         verify(subscriptionPriceCalculator).calculate(TariffType.BASIC, visitCount);
-    }
-
-    @Test
-    public void mapToSubscriptionDtoTest() {
-        var request = new SubscriptionRequestDto(12, TariffType.BASIC);
-
-        SubscriptionDto sub = marketFacade.mapToSubscriptionDto(request, UUID.randomUUID());
-
-        verify(subscriptionPriceCalculator).calculate(any());
-        assertEquals(request.getTariffType(), sub.getTariffType());
-        assertEquals(request.getVisitsTotal(), sub.getVisitsTotal());
-        assertFalse(sub.getActive());
     }
 }

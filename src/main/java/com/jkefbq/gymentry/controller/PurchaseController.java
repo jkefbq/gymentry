@@ -1,12 +1,10 @@
 package com.jkefbq.gymentry.controller;
 
-import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
-import com.jkefbq.gymentry.dto.SubscriptionResponseDto;
 import com.jkefbq.gymentry.database.dto.TariffDto;
-import com.jkefbq.gymentry.database.service.TariffService;
-import com.jkefbq.gymentry.facade.MarketFacade;
 import com.jkefbq.gymentry.database.dto.TariffType;
-import lombok.NonNull;
+import com.jkefbq.gymentry.database.service.TariffService;
+import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
+import com.jkefbq.gymentry.facade.MarketFacade;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -48,13 +46,13 @@ public class PurchaseController {
     }
 
     @PostMapping("/subscription")
-    public ResponseEntity<@NonNull SubscriptionResponseDto> create(
+    public ResponseEntity<?> create(
             @RequestBody SubscriptionRequestDto requestDto,
             @AuthenticationPrincipal UserDetails userDetails
     ) {
         log.info("call /market/subscription");
-        SubscriptionResponseDto response = marketFacade.create(requestDto, userDetails.getUsername());
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        marketFacade.create(requestDto, userDetails.getUsername());
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }

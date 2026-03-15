@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gymentry-purchaser-app
+  namespace: gymentry
+  labels:
+    app: gymentry-purchaser-app
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 75%
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gymentry-purchaser-app
+  template:
+    metadata:
+      labels:
+        app: gymentry-purchaser-app
+    spec:
+      containers:
+        - name: gymentry-purchaser-app
+          image: gymentry-purchaser:latest
+          imagePullPolicy: Never
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "256Mi"
+          ports:
+            - containerPort: 8081
+              name: http
+              protocol: TCP
+          startupProbe:
+            httpGet:
+              port: 8081
+              path: /actuator/health/liveness
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 4
+          livenessProbe:
+            httpGet:
+              port: 8081
+              path: /actuator/health/liveness
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 30
+            failureThreshold: 1
+          readinessProbe:
+            httpGet:
+              port: 8081
+              path: /actuator/health/readiness
+            initialDelaySeconds: 5
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 3
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gymentry-purchaser-app-service
+  namespace: gymentry
+  labels:
+    app: gymentry-purchaser-app
+spec:
+  type: ClusterIP
+  selector:
+    app: gymentry-purchaser-app
+  ports:
+    - port: 8081
+      protocol: TCP

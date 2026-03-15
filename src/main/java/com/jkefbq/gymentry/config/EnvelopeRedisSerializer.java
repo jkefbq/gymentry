@@ -14,9 +14,9 @@ import java.util.List;
 
 public class EnvelopeRedisSerializer implements RedisSerializer<@NonNull Object> {
 
-    private static final String T = "t";   // type
-    private static final String ET = "et"; // element type (for lists)
-    private static final String V = "v";   // value
+    private static final String T = "t";
+    private static final String ET = "et";
+    private static final String V = "v";
 
     private final ObjectMapper mapper;
 
