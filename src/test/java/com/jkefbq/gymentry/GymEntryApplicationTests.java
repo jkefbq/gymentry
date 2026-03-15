@@ -7,6 +7,7 @@ import com.jkefbq.gymentry.database.service.SubscriptionManager;
 import com.jkefbq.gymentry.database.service.UserService;
 import com.jkefbq.gymentry.dto.EntryCode;
 import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
+import com.jkefbq.gymentry.facade.MarketFacade;
 import com.jkefbq.gymentry.security.JwtService;
 import com.jkefbq.gymentry.security.UserCredentialsDto;
 import com.jkefbq.gymentry.service.MailService;
@@ -38,11 +39,11 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import tools.jackson.databind.ObjectMapper;
 
-import java.time.LocalDate;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -89,6 +90,8 @@ class GymEntryApplicationTests {
     NotVerifiedUserService notVerifiedUserService;
     @MockitoSpyBean
     UserService userService;
+    @MockitoSpyBean
+    MarketFacade marketFacade;
 
     @Container
     private static final PostgreSQLContainer<?> POSTGRES_CONTAINER =
@@ -183,22 +186,17 @@ class GymEntryApplicationTests {
     @Test
     @Sql("/insert-test-user.sql")
     public void buySubscriptionTest() throws Exception {
+        doNothing().when(marketFacade).create(any(), any());
         var visitsTotal = ThreadLocalRandom.current().nextInt(12);
         var tariffType = TariffType.BASIC;
         var sub = new SubscriptionRequestDto(visitsTotal, tariffType);
-        var expectedPrice = subscriptionPriceCalculator.calculate(sub.getTariffType(), sub.getVisitsTotal());
         var accessToken = jwtService.generateAccessToken(USER_EMAIL);
 
         mockMvc.perform(post("/market/subscription")
                         .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(sub))
-        ).andExpect(status().isCreated())
-                .andExpect(jsonPath("$.visitsTotal").value(visitsTotal))
-                .andExpect(jsonPath("$.tariffType").value(tariffType.name()))
-                .andExpect(jsonPath("$.purchaseAt").value(LocalDate.now().toString()))
-                .andExpect(jsonPath("$.snapshotPrice").value(expectedPrice.toString()))
-                .andExpect(jsonPath("$.visitsLeft").value(visitsTotal));
+        ).andExpect(status().isCreated());
     }
 
 

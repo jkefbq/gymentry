@@ -22,7 +22,7 @@ spec:
       containers:
         - name: gymentry-app
           image: gymentry:latest
-          imagePullPolicy: Never
+          imagePullPolicy: IfNotPresent
           resources:
             requests:
               cpu: "500m"

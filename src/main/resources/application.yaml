@@ -23,6 +23,24 @@ spring:
     user: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:postgres}
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5433}/${DB_NAME:postgres}
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+      properties:
+        enable.idempotence: true
+    consumer:
+      group-id: my-group-id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+      listener:
+        missing-topics-fatal: false
   mail:
     host: ${SPRING_MAIL_HOST:smtp.gmail.com}
     port: ${SPRING_MAIL_PORT:587}
@@ -75,3 +93,7 @@ resilience4j.ratelimiter:
 app:
   auth:
     encryption-key: ${ENCRYPTION_AUTH_KEY}
+  kafka:
+    topics:
+      subscription-purchases: subscription-purchases
+      confirmed-subscriptions: confirmed-subscription-purchases
