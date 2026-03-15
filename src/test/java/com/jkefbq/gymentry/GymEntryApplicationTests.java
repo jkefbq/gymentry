@@ -7,6 +7,7 @@ import com.jkefbq.gymentry.database.service.SubscriptionManager;
 import com.jkefbq.gymentry.database.service.UserService;
 import com.jkefbq.gymentry.dto.EntryCode;
 import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
+import com.jkefbq.gymentry.facade.MarketFacade;
 import com.jkefbq.gymentry.security.JwtService;
 import com.jkefbq.gymentry.security.UserCredentialsDto;
 import com.jkefbq.gymentry.service.MailService;
@@ -42,6 +43,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -88,6 +90,8 @@ class GymEntryApplicationTests {
     NotVerifiedUserService notVerifiedUserService;
     @MockitoSpyBean
     UserService userService;
+    @MockitoSpyBean
+    MarketFacade marketFacade;
 
     @Container
     private static final PostgreSQLContainer<?> POSTGRES_CONTAINER =
@@ -182,6 +186,7 @@ class GymEntryApplicationTests {
     @Test
     @Sql("/insert-test-user.sql")
     public void buySubscriptionTest() throws Exception {
+        doNothing().when(marketFacade).create(any(), any());
         var visitsTotal = ThreadLocalRandom.current().nextInt(12);
         var tariffType = TariffType.BASIC;
         var sub = new SubscriptionRequestDto(visitsTotal, tariffType);
