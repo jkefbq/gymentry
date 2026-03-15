@@ -23,7 +23,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: gymentry-app
-          image: gymentry:latest
+          image: ghcr.io/jkefbq/gymentry:latest
           imagePullPolicy: IfNotPresent
           resources:
             requests:
