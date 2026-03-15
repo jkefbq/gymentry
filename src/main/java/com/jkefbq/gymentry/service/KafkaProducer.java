@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class KafkaProducer implements MessageProducer {
 
-    KafkaTemplate<@NonNull String,@NonNull Object> kafkaTemplate;
+    private final KafkaTemplate<@NonNull String,@NonNull Object> kafkaTemplate;
 
     @Override
     public void sendSubscriptionPurchase(PurchaseDto purchase) {
