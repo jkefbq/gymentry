@@ -62,7 +62,18 @@
 </details>
 <details>
   <summary>фотки</summary>
-  <img src="" width="48%"> <img src="" width="50%">
+  <img src="src/main/resources/pictures/main-page.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/main-page-entry-code.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/market.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/market-try-purchase.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/subscriptions.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/profile" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/admin-entry.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/admin-tariffs.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/admin-statistics-visits.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/admin-statistics-purchases-1.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/admin-statistics-purchases-2.png" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/admin-settings.png" width="100%"> <img src="" width="100%">
 </details>
 
 ## 🛠 Технологии
