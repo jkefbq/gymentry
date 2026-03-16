@@ -67,7 +67,7 @@
   <img src="src/main/resources/pictures/market.png" width="100%"> <img src="" width="100%">
   <img src="src/main/resources/pictures/market-try-purchase.png" width="100%"> <img src="" width="100%">
   <img src="src/main/resources/pictures/subscriptions.png" width="100%"> <img src="" width="100%">
-  <img src="src/main/resources/pictures/profile" width="100%"> <img src="" width="100%">
+  <img src="src/main/resources/pictures/profile.png" width="100%"> <img src="" width="100%">
   <img src="src/main/resources/pictures/admin-entry.png" width="100%"> <img src="" width="100%">
   <img src="src/main/resources/pictures/admin-tariffs.png" width="100%"> <img src="" width="100%">
   <img src="src/main/resources/pictures/admin-statistics-visits.png" width="100%"> <img src="" width="100%">
