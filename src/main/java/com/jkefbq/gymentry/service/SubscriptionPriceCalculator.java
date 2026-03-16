@@ -7,6 +7,5 @@ import java.math.BigDecimal;
 
 public interface SubscriptionPriceCalculator {
     BigDecimal calculate(SubscriptionDto subscriptionDto);
-
     BigDecimal calculate(TariffType tariffType, Integer visitsCount);
 }

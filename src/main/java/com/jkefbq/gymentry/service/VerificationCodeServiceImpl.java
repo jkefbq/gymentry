@@ -28,7 +28,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
         try {
             return redisTemplate.opsForValue().get(CACHE_NAMES + "::" + email).equals(code);
         } catch (NullPointerException e) {
-            throw new TimeoutActivationCodeException("time to enter code has expired");
+            throw new TimeoutActivationCodeException("time to enter code has expired or incorrect");
         }
     }
 

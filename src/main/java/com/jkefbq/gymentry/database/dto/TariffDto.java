@@ -1,7 +1,5 @@
 package com.jkefbq.gymentry.database.dto;
 
-
-import com.jkefbq.gymentry.dto.CanCache;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

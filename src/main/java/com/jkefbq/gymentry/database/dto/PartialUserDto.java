@@ -1,6 +1,5 @@
 package com.jkefbq.gymentry.database.dto;
 
-import com.jkefbq.gymentry.dto.CanCache;
 import com.jkefbq.gymentry.security.UserRole;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;

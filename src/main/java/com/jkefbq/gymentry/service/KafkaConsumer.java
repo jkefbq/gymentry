@@ -21,6 +21,7 @@ public class KafkaConsumer implements MessageConsumer {
     private final SubscriptionPriceCalculator subscriptionPriceCalculator;
 
     @KafkaListener(topics = "${app.kafka.topics.confirmed-subscriptions}")
+    @Override
     public void consumeSuccessfullyPurchase(ConsumerRecord<String, PurchaseDto> record) {
         PartialUserDto user = userService.findByEmail(record.value().getOwnerEmail().getEmail()).orElseThrow();
         SubscriptionDto sub = SubscriptionDto.builder()

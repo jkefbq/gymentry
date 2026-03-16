@@ -60,7 +60,7 @@ public class UserController {
 
     @PutMapping("/entry")
     public String getGymEntryCode(@AuthenticationPrincipal UserDetails userDetails) throws NonActiveSubscriptionException, InvalidSubscriptionException {
-        log.info("call '/user/entry' for user with email {}", userDetails.getUsername());
+        log.info("call '/user/entry', user with email {}", userDetails.getUsername());
         return gymEntryFacade.tryEntry(userDetails.getUsername());
     }
 

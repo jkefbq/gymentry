@@ -11,13 +11,13 @@ import java.time.Duration;
 @RequiredArgsConstructor
 public class EntryCodeServiceImpl implements EntryCodeService {
 
-    private static final Duration KEYS_TTL = Duration.ofMinutes(5);
+    private static final Duration CODE_TTL = Duration.ofMinutes(5);
     private static final String CACHE_NAMES = "entry_code";
     private final RedisTemplate<String, Object> redisTemplate;
 
     public String generateUserEntryCode(String email) {
         String code = RandomStringUtils.secureStrong().nextNumeric(6);
-        redisTemplate.opsForValue().set(CACHE_NAMES + "::" + code, email, KEYS_TTL);
+        redisTemplate.opsForValue().set(CACHE_NAMES + "::" + code, email, CODE_TTL);
         return code;
     }
 
