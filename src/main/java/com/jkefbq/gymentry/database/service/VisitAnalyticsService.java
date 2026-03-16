@@ -4,6 +4,7 @@ import com.jkefbq.gymentry.database.dto.VisitDto;
 import com.jkefbq.gymentry.dto.PeakVisitsDay;
 import com.jkefbq.gymentry.dto.VisitPerDate;
 import com.jkefbq.gymentry.dto.VisitTariffPerDate;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@PreAuthorize("hasRole('ADMIN')")
 public class VisitAnalyticsService implements VisitAnalytics {
 
     @Override

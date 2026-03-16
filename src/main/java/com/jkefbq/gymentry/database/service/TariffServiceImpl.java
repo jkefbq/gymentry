@@ -9,6 +9,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,6 +39,7 @@ public class TariffServiceImpl implements TariffService {
                 .map(tariffMapper::toDto);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Override
     @CacheEvict(cacheNames = CACHE_NAMES, allEntries = true)
     @Transactional
@@ -46,6 +48,7 @@ public class TariffServiceImpl implements TariffService {
         return tariffRepository.saveAll(entityList).stream().map(tariffMapper::toDto).toList();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Override
     @CacheEvict(cacheNames = CACHE_NAMES, allEntries = true)
     @Transactional
@@ -55,6 +58,7 @@ public class TariffServiceImpl implements TariffService {
         return tariffMapper.toDto(savedEntity);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Override
     @CacheEvict(cacheNames = CACHE_NAMES, allEntries = true)
     @Transactional

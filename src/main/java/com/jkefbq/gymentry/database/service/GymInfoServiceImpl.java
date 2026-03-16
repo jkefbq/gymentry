@@ -8,6 +8,7 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class GymInfoServiceImpl implements GymInfoService {
     private final GymInfoRepository gymInfoRepository;
     private final GymInfoMapper gymInfoMapper;
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Transactional
     @CachePut(cacheNames = CACHE_NAMES, unless = "#result == null")
     @Override
@@ -37,6 +39,7 @@ public class GymInfoServiceImpl implements GymInfoService {
         return gymInfoRepository.getAllAddresses();
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @Transactional
     @Override
     public Optional<GymInfoDto> getByAddress(String gymAddress) {
