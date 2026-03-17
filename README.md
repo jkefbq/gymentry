@@ -9,7 +9,7 @@
 ![Tests](https://img.shields.io/badge/Coverage-85%25-yellow)  
 Пропускная система для спортзала с JWT-авторизацией, подтверждением входа по email и real-time аналитикой в админ-панели. Реализована на микросервисной архитектуре с асинхронным взаимодействием через Kafka, кэшированием, многопоточностью, интеграционными тестами и деплоем в Kubernetes.
 <details>
-<summary>подробнее</summary>  
+<summary>📜подробнее</summary>  
 <br>
 <table>
   <thead>
@@ -61,7 +61,7 @@
 </table>
 </details>
 <details>
-  <summary>фотки</summary>
+  <summary>🎴 скриншоты</summary>
   <img src="src/main/resources/pictures/main-page.png" width="100%"> <img src="" width="100%">
   <img src="src/main/resources/pictures/main-page-entry-code.png" width="100%"> <img src="" width="100%">
   <img src="src/main/resources/pictures/market.png" width="100%"> <img src="" width="100%">
@@ -90,6 +90,7 @@
 - MapStruct
 - GitHub Actions
 - Lombok
+- Maven
 ### тесты:
 - JUnit
 - Mockito
@@ -100,7 +101,7 @@
 ## 🚀 Функциональность
  
 <details>
-<summary><b>👤 Пользователь</b></summary>
+<summary><b>🙍‍♂️ Пользователь</b></summary>
 <br>
 <table>
   <thead>
