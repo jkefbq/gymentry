@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.security;
 
-import com.jkefbq.gymentry.dto.TokenPairDto;
+import com.jkefbq.gymentry.dto.auth.TokenPairDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;

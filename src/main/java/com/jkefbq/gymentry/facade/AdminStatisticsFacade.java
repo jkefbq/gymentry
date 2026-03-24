@@ -1,13 +1,13 @@
 package com.jkefbq.gymentry.facade;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.VisitDto;
-import com.jkefbq.gymentry.database.service.SubscriptionAnalyticsService;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.VisitAnalyticsService;
-import com.jkefbq.gymentry.database.service.VisitService;
-import com.jkefbq.gymentry.dto.PurchaseStatistics;
-import com.jkefbq.gymentry.dto.VisitStatistics;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.VisitDto;
+import com.jkefbq.gymentry.service.database.SubscriptionAnalyticsService;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.VisitAnalyticsService;
+import com.jkefbq.gymentry.service.database.VisitService;
+import com.jkefbq.gymentry.dto.statistics.PurchaseStatistics;
+import com.jkefbq.gymentry.dto.statistics.VisitStatistics;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

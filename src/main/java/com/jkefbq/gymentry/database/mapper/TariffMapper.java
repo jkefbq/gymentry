@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.database.mapper;
 
-import com.jkefbq.gymentry.database.dto.TariffDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffDto;
 import com.jkefbq.gymentry.database.entity.Tariff;
 import org.mapstruct.Mapper;
 

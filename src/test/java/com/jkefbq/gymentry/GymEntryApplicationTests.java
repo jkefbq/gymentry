@@ -1,13 +1,13 @@
 package com.jkefbq.gymentry;
 
-import com.jkefbq.gymentry.database.dto.NotVerifiedUserDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
-import com.jkefbq.gymentry.database.service.NotVerifiedUserService;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.UserService;
-import com.jkefbq.gymentry.dto.EntryCode;
-import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
-import com.jkefbq.gymentry.dto.UserCredentialsDto;
+import com.jkefbq.gymentry.dto.for_entity.NotVerifiedUserDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
+import com.jkefbq.gymentry.service.database.NotVerifiedUserService;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.UserService;
+import com.jkefbq.gymentry.dto.auth.EntryCode;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionRequestDto;
+import com.jkefbq.gymentry.dto.auth.UserCredentialsDto;
 import com.jkefbq.gymentry.security.JwtService;
 import com.jkefbq.gymentry.service.MailService;
 import com.jkefbq.gymentry.service.MessageConsumerImpl;

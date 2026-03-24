@@ -1,12 +1,12 @@
 package com.jkefbq.gymentry.facade;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
-import com.jkefbq.gymentry.database.dto.VisitDto;
-import com.jkefbq.gymentry.database.service.SubscriptionAnalyticsService;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.VisitAnalyticsService;
-import com.jkefbq.gymentry.database.service.VisitService;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
+import com.jkefbq.gymentry.dto.for_entity.VisitDto;
+import com.jkefbq.gymentry.service.database.SubscriptionAnalyticsService;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.VisitAnalyticsService;
+import com.jkefbq.gymentry.service.database.VisitService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

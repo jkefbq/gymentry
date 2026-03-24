@@ -1,14 +1,14 @@
 package com.jkefbq.gymentry.controller;
 
-import com.jkefbq.gymentry.dto.EmailDto;
-import com.jkefbq.gymentry.database.dto.NotVerifiedUserDto;
-import com.jkefbq.gymentry.dto.RefreshTokenDto;
-import com.jkefbq.gymentry.database.service.UserServiceImpl;
+import com.jkefbq.gymentry.dto.auth.EmailDto;
+import com.jkefbq.gymentry.dto.for_entity.NotVerifiedUserDto;
+import com.jkefbq.gymentry.dto.auth.RefreshTokenDto;
+import com.jkefbq.gymentry.service.database.UserServiceImpl;
 import com.jkefbq.gymentry.facade.UserAuthFacade;
 import com.jkefbq.gymentry.security.JwtFilter;
 import com.jkefbq.gymentry.security.MyUserDetailsService;
 import com.jkefbq.gymentry.security.SecurityConfig;
-import com.jkefbq.gymentry.dto.UserCredentialsDto;
+import com.jkefbq.gymentry.dto.auth.UserCredentialsDto;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

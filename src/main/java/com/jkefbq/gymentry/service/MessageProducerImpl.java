@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.service;
 
-import com.jkefbq.gymentry.dto.PurchaseDto;
+import com.jkefbq.gymentry.dto.statistics.PurchaseDto;
 import com.jkefbq.gymentry.props.YamlConfig;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

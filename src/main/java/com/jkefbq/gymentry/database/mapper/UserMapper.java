@@ -1,8 +1,8 @@
 package com.jkefbq.gymentry.database.mapper;
 
-import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.dto.UserDto;
-import com.jkefbq.gymentry.database.dto.UserWithPassword;
+import com.jkefbq.gymentry.dto.for_entity.PartialUserDto;
+import com.jkefbq.gymentry.dto.for_entity.UserDto;
+import com.jkefbq.gymentry.dto.for_entity.UserWithPassword;
 import com.jkefbq.gymentry.database.entity.User;
 import org.mapstruct.Mapper;
 

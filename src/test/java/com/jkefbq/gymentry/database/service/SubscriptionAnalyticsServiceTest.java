@@ -1,10 +1,11 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
-import com.jkefbq.gymentry.dto.PeakPurchasesDay;
-import com.jkefbq.gymentry.dto.PurchasePerDate;
-import com.jkefbq.gymentry.dto.PurchaseTariffTypePerDate;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
+import com.jkefbq.gymentry.dto.statistics.PeakPurchasesDay;
+import com.jkefbq.gymentry.dto.statistics.PurchasePerDate;
+import com.jkefbq.gymentry.dto.statistics.PurchaseTariffTypePerDate;
+import com.jkefbq.gymentry.service.database.SubscriptionAnalyticsServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Spy;

@@ -1,12 +1,14 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
 import com.jkefbq.gymentry.database.entity.Subscription;
 import com.jkefbq.gymentry.database.mapper.SubscriptionMapper;
 import com.jkefbq.gymentry.database.mapper.SubscriptionMapperImpl;
 import com.jkefbq.gymentry.database.repository.SubscriptionRepository;
 import com.jkefbq.gymentry.exception.NonActiveSubscriptionException;
+import com.jkefbq.gymentry.service.database.SubscriptionServiceImpl;
+import com.jkefbq.gymentry.service.database.UserService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

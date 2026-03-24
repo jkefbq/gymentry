@@ -1,10 +1,10 @@
 package com.jkefbq.gymentry.service;
 
-import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.UserService;
-import com.jkefbq.gymentry.dto.PurchaseDto;
+import com.jkefbq.gymentry.dto.for_entity.PartialUserDto;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.UserService;
+import com.jkefbq.gymentry.dto.statistics.PurchaseDto;
 import lombok.RequiredArgsConstructor;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.kafka.annotation.KafkaListener;

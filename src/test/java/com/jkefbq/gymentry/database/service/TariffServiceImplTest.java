@@ -1,9 +1,10 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.TariffDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
+import com.jkefbq.gymentry.dto.for_entity.TariffDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
 import com.jkefbq.gymentry.database.mapper.TariffMapper;
 import com.jkefbq.gymentry.database.repository.TariffRepository;
+import com.jkefbq.gymentry.service.database.TariffServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

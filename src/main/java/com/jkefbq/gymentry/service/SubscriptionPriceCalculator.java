@@ -1,7 +1,7 @@
 package com.jkefbq.gymentry.service;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
 
 import java.math.BigDecimal;
 

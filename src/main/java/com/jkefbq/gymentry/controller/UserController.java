@@ -1,9 +1,9 @@
 package com.jkefbq.gymentry.controller;
 
-import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.UserService;
+import com.jkefbq.gymentry.dto.for_entity.PartialUserDto;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.UserService;
 import com.jkefbq.gymentry.exception.InvalidSubscriptionException;
 import com.jkefbq.gymentry.exception.NonActiveSubscriptionException;
 import com.jkefbq.gymentry.facade.GymEntryFacade;

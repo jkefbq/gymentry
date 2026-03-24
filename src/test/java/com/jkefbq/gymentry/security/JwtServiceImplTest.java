@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.security;
 
-import com.jkefbq.gymentry.dto.TokenPairDto;
+import com.jkefbq.gymentry.dto.auth.TokenPairDto;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

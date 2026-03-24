@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.security;
 
-import com.jkefbq.gymentry.database.dto.UserWithPassword;
+import com.jkefbq.gymentry.dto.for_entity.UserWithPassword;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

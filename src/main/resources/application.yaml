@@ -86,7 +86,7 @@ resilience4j.ratelimiter:
       writable-stack-trace-enabled: false
     send-activation-code:
       limitForPeriod: 1
-      limit-refresh-period: 4m
+      limit-refresh-period: 3m
       timeoutDuration: 0s
       writable-stack-trace-enabled: false
 

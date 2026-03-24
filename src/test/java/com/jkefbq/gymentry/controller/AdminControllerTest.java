@@ -1,11 +1,11 @@
 package com.jkefbq.gymentry.controller;
 
-import com.jkefbq.gymentry.dto.EntryCode;
-import com.jkefbq.gymentry.database.dto.GymInfoDto;
-import com.jkefbq.gymentry.database.dto.TariffDto;
-import com.jkefbq.gymentry.database.service.GymInfoService;
-import com.jkefbq.gymentry.database.service.TariffService;
-import com.jkefbq.gymentry.database.service.UserServiceImpl;
+import com.jkefbq.gymentry.dto.auth.EntryCode;
+import com.jkefbq.gymentry.dto.for_entity.GymInfoDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffDto;
+import com.jkefbq.gymentry.service.database.GymInfoService;
+import com.jkefbq.gymentry.service.database.TariffService;
+import com.jkefbq.gymentry.service.database.UserServiceImpl;
 import com.jkefbq.gymentry.facade.AdminStatisticsFacade;
 import com.jkefbq.gymentry.facade.GymEntryFacade;
 import com.jkefbq.gymentry.security.JwtFilter;

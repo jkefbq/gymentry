@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.database.entity;
 
-import com.jkefbq.gymentry.database.dto.TariffType;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;

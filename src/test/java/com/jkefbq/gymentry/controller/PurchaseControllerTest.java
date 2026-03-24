@@ -1,10 +1,10 @@
 package com.jkefbq.gymentry.controller;
 
-import com.jkefbq.gymentry.database.dto.TariffType;
-import com.jkefbq.gymentry.database.service.SubscriptionServiceImpl;
-import com.jkefbq.gymentry.database.service.TariffService;
-import com.jkefbq.gymentry.database.service.UserServiceImpl;
-import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
+import com.jkefbq.gymentry.service.database.SubscriptionServiceImpl;
+import com.jkefbq.gymentry.service.database.TariffService;
+import com.jkefbq.gymentry.service.database.UserServiceImpl;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionRequestDto;
 import com.jkefbq.gymentry.security.JwtFilter;
 import com.jkefbq.gymentry.security.MyUserDetailsService;
 import com.jkefbq.gymentry.security.SecurityConfig;

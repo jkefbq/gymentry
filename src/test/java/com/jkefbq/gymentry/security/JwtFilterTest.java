@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.security;
 
-import com.jkefbq.gymentry.database.dto.UserWithPassword;
+import com.jkefbq.gymentry.dto.for_entity.UserWithPassword;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,17 +1,17 @@
 package com.jkefbq.gymentry.facade;
 
-import com.jkefbq.gymentry.database.dto.NotVerifiedUserDto;
-import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.dto.UserWithPassword;
-import com.jkefbq.gymentry.database.service.NotVerifiedUserService;
-import com.jkefbq.gymentry.database.service.UserService;
+import com.jkefbq.gymentry.dto.for_entity.NotVerifiedUserDto;
+import com.jkefbq.gymentry.dto.for_entity.PartialUserDto;
+import com.jkefbq.gymentry.dto.for_entity.UserWithPassword;
+import com.jkefbq.gymentry.service.database.NotVerifiedUserService;
+import com.jkefbq.gymentry.service.database.UserService;
 import com.jkefbq.gymentry.exception.InvalidTokenException;
 import com.jkefbq.gymentry.exception.InvalidVerificationCodeException;
 import com.jkefbq.gymentry.exception.TimeoutActivationCodeException;
 import com.jkefbq.gymentry.exception.UserAlreadyExistsException;
 import com.jkefbq.gymentry.security.JwtService;
-import com.jkefbq.gymentry.dto.TokenPairDto;
-import com.jkefbq.gymentry.dto.UserCredentialsDto;
+import com.jkefbq.gymentry.dto.auth.TokenPairDto;
+import com.jkefbq.gymentry.dto.auth.UserCredentialsDto;
 import com.jkefbq.gymentry.security.UserRole;
 import com.jkefbq.gymentry.service.MailService;
 import com.jkefbq.gymentry.service.VerificationCodeService;

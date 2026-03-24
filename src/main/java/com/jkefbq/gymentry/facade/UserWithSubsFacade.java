@@ -1,9 +1,9 @@
 package com.jkefbq.gymentry.facade;
 
-import com.jkefbq.gymentry.database.dto.UserDto;
+import com.jkefbq.gymentry.dto.for_entity.UserDto;
 import com.jkefbq.gymentry.database.mapper.UserMapper;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.UserService;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.UserService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

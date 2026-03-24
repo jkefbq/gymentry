@@ -1,8 +1,8 @@
 package com.jkefbq.gymentry.database.mapper;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.dto.SubscriptionRequestDto;
-import com.jkefbq.gymentry.dto.SubscriptionResponseDto;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionRequestDto;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionResponseDto;
 import com.jkefbq.gymentry.database.entity.Subscription;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

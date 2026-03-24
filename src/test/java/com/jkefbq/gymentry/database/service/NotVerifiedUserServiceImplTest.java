@@ -1,8 +1,9 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.NotVerifiedUserDto;
+import com.jkefbq.gymentry.dto.for_entity.NotVerifiedUserDto;
 import com.jkefbq.gymentry.database.mapper.NotVerifiedUserMapper;
 import com.jkefbq.gymentry.database.repository.NotVerifiedUserRepository;
+import com.jkefbq.gymentry.service.database.NotVerifiedUserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

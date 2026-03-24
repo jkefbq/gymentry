@@ -1,10 +1,11 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.GymInfoDto;
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.VisitDto;
+import com.jkefbq.gymentry.dto.for_entity.GymInfoDto;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.VisitDto;
 import com.jkefbq.gymentry.database.mapper.VisitMapper;
 import com.jkefbq.gymentry.database.repository.VisitRepository;
+import com.jkefbq.gymentry.service.database.VisitServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

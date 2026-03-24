@@ -1,13 +1,13 @@
 package com.jkefbq.gymentry.controller;
 
-import com.jkefbq.gymentry.database.dto.GymInfoDto;
-import com.jkefbq.gymentry.database.dto.TariffDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
-import com.jkefbq.gymentry.database.service.GymInfoService;
-import com.jkefbq.gymentry.database.service.TariffService;
-import com.jkefbq.gymentry.dto.EntryCode;
-import com.jkefbq.gymentry.dto.PurchaseStatistics;
-import com.jkefbq.gymentry.dto.VisitStatistics;
+import com.jkefbq.gymentry.dto.for_entity.GymInfoDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
+import com.jkefbq.gymentry.service.database.GymInfoService;
+import com.jkefbq.gymentry.service.database.TariffService;
+import com.jkefbq.gymentry.dto.auth.EntryCode;
+import com.jkefbq.gymentry.dto.statistics.PurchaseStatistics;
+import com.jkefbq.gymentry.dto.statistics.VisitStatistics;
 import com.jkefbq.gymentry.exception.InvalidSubscriptionException;
 import com.jkefbq.gymentry.exception.NonActiveSubscriptionException;
 import com.jkefbq.gymentry.facade.AdminStatisticsFacade;

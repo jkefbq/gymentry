@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.security;
 
-import com.jkefbq.gymentry.database.service.UserService;
+import com.jkefbq.gymentry.service.database.UserService;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import org.springframework.security.core.userdetails.UserDetails;

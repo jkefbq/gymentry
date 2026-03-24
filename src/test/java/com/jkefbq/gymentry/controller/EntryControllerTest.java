@@ -1,8 +1,8 @@
 package com.jkefbq.gymentry.controller;
 
-import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.UserServiceImpl;
+import com.jkefbq.gymentry.dto.for_entity.PartialUserDto;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.UserServiceImpl;
 import com.jkefbq.gymentry.facade.GymEntryFacade;
 import com.jkefbq.gymentry.security.JwtFilter;
 import com.jkefbq.gymentry.security.MyUserDetailsService;

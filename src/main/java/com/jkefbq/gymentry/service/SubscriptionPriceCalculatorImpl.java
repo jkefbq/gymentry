@@ -1,9 +1,9 @@
 package com.jkefbq.gymentry.service;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.TariffDto;
-import com.jkefbq.gymentry.database.service.TariffService;
-import com.jkefbq.gymentry.database.dto.TariffType;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffDto;
+import com.jkefbq.gymentry.service.database.TariffService;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

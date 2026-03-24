@@ -1,13 +1,13 @@
 package com.jkefbq.gymentry.facade;
 
-import com.jkefbq.gymentry.database.dto.GymInfoDto;
-import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.VisitDto;
-import com.jkefbq.gymentry.database.service.GymInfoService;
-import com.jkefbq.gymentry.database.service.SubscriptionService;
-import com.jkefbq.gymentry.database.service.UserService;
-import com.jkefbq.gymentry.database.service.VisitService;
+import com.jkefbq.gymentry.dto.for_entity.GymInfoDto;
+import com.jkefbq.gymentry.dto.for_entity.PartialUserDto;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.VisitDto;
+import com.jkefbq.gymentry.service.database.GymInfoService;
+import com.jkefbq.gymentry.service.database.SubscriptionService;
+import com.jkefbq.gymentry.service.database.UserService;
+import com.jkefbq.gymentry.service.database.VisitService;
 import com.jkefbq.gymentry.exception.NonActiveSubscriptionException;
 import com.jkefbq.gymentry.service.EntryCodeService;
 import org.junit.jupiter.api.Test;

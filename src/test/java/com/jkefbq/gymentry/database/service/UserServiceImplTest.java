@@ -1,13 +1,14 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.PartialUserDto;
-import com.jkefbq.gymentry.database.dto.UserDto;
-import com.jkefbq.gymentry.database.dto.UserWithPassword;
+import com.jkefbq.gymentry.dto.for_entity.PartialUserDto;
+import com.jkefbq.gymentry.dto.for_entity.UserDto;
+import com.jkefbq.gymentry.dto.for_entity.UserWithPassword;
 import com.jkefbq.gymentry.database.entity.User;
 import com.jkefbq.gymentry.database.mapper.UserMapper;
 import com.jkefbq.gymentry.database.mapper.UserMapperImpl;
 import com.jkefbq.gymentry.database.repository.UserRepository;
 import com.jkefbq.gymentry.security.UserRole;
+import com.jkefbq.gymentry.service.database.UserServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

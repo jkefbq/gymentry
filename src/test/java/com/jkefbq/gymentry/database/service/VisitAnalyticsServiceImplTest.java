@@ -1,11 +1,13 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.SubscriptionDto;
-import com.jkefbq.gymentry.database.dto.TariffType;
-import com.jkefbq.gymentry.database.dto.VisitDto;
-import com.jkefbq.gymentry.dto.PeakVisitsDay;
-import com.jkefbq.gymentry.dto.VisitPerDate;
-import com.jkefbq.gymentry.dto.VisitTariffPerDate;
+import com.jkefbq.gymentry.dto.for_entity.SubscriptionDto;
+import com.jkefbq.gymentry.dto.for_entity.TariffType;
+import com.jkefbq.gymentry.dto.for_entity.VisitDto;
+import com.jkefbq.gymentry.dto.statistics.PeakVisitsDay;
+import com.jkefbq.gymentry.dto.statistics.VisitPerDate;
+import com.jkefbq.gymentry.dto.statistics.VisitTariffPerDate;
+import com.jkefbq.gymentry.service.database.VisitAnalyticsService;
+import com.jkefbq.gymentry.service.database.VisitAnalyticsServiceImpl;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

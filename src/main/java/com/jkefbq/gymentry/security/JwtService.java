@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.security;
 
-import com.jkefbq.gymentry.dto.TokenPairDto;
+import com.jkefbq.gymentry.dto.auth.TokenPairDto;
 
 public interface JwtService {
     TokenPairDto generateTokenPair(String email);

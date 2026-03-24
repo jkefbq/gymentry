@@ -1,6 +1,6 @@
 package com.jkefbq.gymentry.database.mapper;
 
-import com.jkefbq.gymentry.database.dto.GymInfoDto;
+import com.jkefbq.gymentry.dto.for_entity.GymInfoDto;
 import com.jkefbq.gymentry.database.entity.GymInfo;
 import org.mapstruct.Mapper;
 

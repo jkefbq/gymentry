@@ -1,8 +1,9 @@
 package com.jkefbq.gymentry.database.service;
 
-import com.jkefbq.gymentry.database.dto.GymInfoDto;
+import com.jkefbq.gymentry.dto.for_entity.GymInfoDto;
 import com.jkefbq.gymentry.database.mapper.GymInfoMapper;
 import com.jkefbq.gymentry.database.repository.GymInfoRepository;
+import com.jkefbq.gymentry.service.database.GymInfoServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
